@@ -90,9 +90,11 @@ export default {
         // },
         endpoints: {
           login: { url: '/auth/login', method: 'post', propertyName: 'token' },
-          logout: { url: '/auth/logout', method: 'post' },
-          user: { url: '/auth/user', method: 'get' , propertyName: 'user'}
-        }
+          logout: { url: '/auth/logout', method: 'delete' },
+          user: { url: '/auth/user', method: 'get', propertyName: 'data.attributes'}
+        },
+        tokenType: 'bearer'
+        // tokenType: ''
       }
     }
   },
