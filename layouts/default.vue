@@ -1,13 +1,13 @@
 <template>
-  <v-app dark>
+  <v-app>
     <v-app-bar app color="green">
       <v-btn text to="/">Vue Screencasts</v-btn>
       <v-btn v-if="$auth.user && $auth.user.admin" text to="/admin/videos"
         >Admin</v-btn
       >
       <v-spacer />
-
       {{ $auth.loggedIn }}
+      {{ $auth.user }}
       <div v-if="$auth.loggedIn">
         {{ $auth.user.email }}
         {{ $auth.user.access_token }}
@@ -15,7 +15,7 @@
       </div>
       <div v-else>
         <v-btn text to="/login">Login</v-btn>
-        <v-btn text to="/register">Register</v-btn>
+        <v-btn text to="/signup">SignUp</v-btn>
       </div>
     </v-app-bar>
     <v-main>

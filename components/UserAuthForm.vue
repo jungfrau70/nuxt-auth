@@ -13,14 +13,14 @@
 
     <UserAuthPassword v-model="userInfo.password" label="Password" />
 
-    <div v-if="registrationCheckboxes">
+    <div v-if="signUpCheckboxes">
       <!-- v-model connects it with the userInfo hash, value makes the :rules work -->
       <v-checkbox v-model="userInfo.agreeToTerms"
                   value="userInfo.agreeToTerms"
                   class="mr-0"
                   color="green"
                   :rules="[required('agreeToTerms', 'You must agree to the terms and conditions and privacy policy')]">
-        <template #label @click.stop>
+        <template #label>
           <span>
             I have read and agree to the 
             <a href="/policies/terms-and-conditions" target="_blank" @click.stop>Terms and Conditions</a>
@@ -74,7 +74,7 @@
         required: true,
       },
       hasName: Boolean,
-      registrationCheckboxes: Boolean
+      signUpCheckboxes: Boolean
     }
   }
 </script>

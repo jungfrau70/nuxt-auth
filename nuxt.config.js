@@ -78,24 +78,13 @@ export default {
   auth: {
     strategies: {
       local: {
-        // token: {
-        //   property: 'token',
-        //   global: true,
-        //   // required: true,
-        //   // type: 'Bearer'
-        // },
-        // user: {
-        //   property: 'user',
-        //   // autoFetch: true
-        // },
         endpoints: {
-          login: { url: '/auth/login', method: 'post', propertyName: 'token' },
-          logout: { url: '/auth/logout', method: 'delete' },
-          user: { url: '/auth/user', method: 'get', propertyName: 'data.attributes'}
+          login: { url: 'login', method: 'post', propertyName: 'access_token' },
+          user: { url: 'protected', method: 'get', propertyName: 'current_user' },
+          logout: false
         },
-        tokenType: 'bearer'
-        // tokenType: ''
+        tokenType: 'Bearer'
       }
     }
-  },
+  }
 }
